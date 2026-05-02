@@ -1,0 +1,421 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Support Way Worldwide</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'main.css'%}" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Barlow:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ===== ANNOUNCEMENT BAR ===== -->
+  <div class="announcement-bar">
+    <a href="#" class="announcement-bar__link">DONATE NOW &rarr;</a>
+  </div>
+
+  <!-- ===== NAVBAR ===== -->
+  <header class="navbar" id="navbar">
+    <div class="navbar__container">
+      <a href="#" class="navbar__logo">
+        <img src="" alt="support way worldwide Logo" class="navbar__logo-img" />
+        <span class="navbar__logo-text">Support Way Worldwide</span>
+      </a>
+
+      <button class="navbar__toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="navbar__nav" id="navMenu">
+        <ul class="navbar__list">
+          <li class="navbar__item"><a href="#about" class="navbar__link">ABOUT</a></li>
+          <!-- <li class="navbar__item"><a href="#need" class="navbar__link">NEED</a></li>-->
+          <li class="navbar__item navbar__item--dropdown">
+            <a href="#programs" class="navbar__link">PROGRAMS</a>
+            <ul class="navbar__dropdown">
+              <li><a href="#" class="navbar__dropdown-link">Medical Missions</a></li>
+              <li><a href="#" class="navbar__dropdown-link">Mental & Menstrual Health</a></li>
+              <li><a href="#" class="navbar__dropdown-link">Mother and Child</a></li>
+              <li><a href="#" class="navbar__dropdown-link">Scholarships</a></li>
+              <li><a href="#" class="navbar__dropdown-link">Support for Schools</a></li>
+              <li><a href="#" class="navbar__dropdown-link">African Health Symposia</a></li>
+            </ul>
+          </li>
+          <li class="navbar__item navbar__item--dropdown">
+            <a href="#media" class="navbar__link">MEDIA</a>
+            <ul class="navbar__dropdown">
+              <li><a href="#" class="navbar__dropdown-link">Media</a></li>
+              <li><a href="#" class="navbar__dropdown-link">Celebrity Support</a></li>
+              <li><a href="#" class="navbar__dropdown-link">Podcasts</a></li>
+            </ul>
+          </li>
+          <li class="navbar__item"><a href="#events" class="navbar__link">EVENTS</a></li>
+          <li class="navbar__item"><a href="#join" class="navbar__link">JOIN US</a></li>
+        </ul>
+        <a href="#" class="navbar__donate-btn">DONATE</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== HERO SECTION ===== -->
+  <section class="hero" id="home">
+    <div class="hero__media">
+      <img src="" alt="support Way Worldwide - saving lives around the world" class="hero__bg-img" />
+      <div class="hero__overlay"></div>
+    </div>
+    <div class="hero__content">
+      <p class="hero__eyebrow">EMPOWERED BY YOU</p>
+      <h1 class="hero__headline">We Save &amp; Transform<br />Lives around the world<br />Every Day</h1>
+      <div class="hero__actions">
+        <a href="#" class="btn btn--primary">DONATE NOW</a>
+        <a href="#about" class="btn btn--outline">LEARN MORE</a>
+      </div>
+    </div>
+    <div class="hero__scroll-hint">
+      <span class="hero__scroll-line"></span>
+      <span class="hero__scroll-label">Scroll</span>
+    </div>
+  </section>
+
+  <!-- ===== WHO WE ARE ===== -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about__grid">
+        <div class="about__image-wrap">
+          <img src="" alt="Support way worldwide providing medical care in USA" class="about__image" />
+          <div class="about__image-accent"></div>
+        </div>
+        <div class="about__content">
+          <span class="section-label">Our Mission</span>
+          <h2 class="section-title">WHO WE ARE</h2>
+          <p class="about__text">
+            Support Way worldwide saves and transforms the lives of the poor and vulnerable in all over the globe. We lead special surgical missions and run a network of innovative solar-powered maternal and infant health clinics across europe. We also provide life-changing scholarships to young female victims of terrorism and gender inequality.
+          </p>
+          <a href="#" class="btn btn--primary">ABOUT US</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== STATS / IMPACT ===== -->
+  <section class="impact" id="impact">
+    <div class="impact__bg">
+      <img src="" alt="Support Way worldwide impact in Canada" class="impact__bg-img" />
+      <div class="impact__overlay"></div>
+    </div>
+    <div class="container">
+      <span class="section-label section-label--light">Our Reach</span>
+      <h2 class="section-title section-title--light">HOW WE HELP</h2>
+      <div class="impact__grid">
+        <div class="impact__stat">
+          <span class="impact__number" data-target="15000">0</span>
+          <p class="impact__desc">Women and children screened &amp; treated for anemia</p>
+        </div>
+        <div class="impact__stat">
+          <span class="impact__number" data-target="8200">0</span>
+          <p class="impact__desc">Women helped to deliver healthy babies</p>
+        </div>
+        <div class="impact__stat">
+          <span class="impact__number" data-target="3400">0</span>
+          <p class="impact__desc">Patients received free hip, knee &amp; bone surgeries</p>
+        </div>
+        <div class="impact__stat">
+          <span class="impact__number impact__number--m" data-target="12">0</span>
+          <p class="impact__desc">Million in donated medical equipment &amp; training</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROGRAM SPOTLIGHT ===== -->
+  <section class="spotlight" id="spotlight">
+    <div class="container">
+      <span class="section-label">Featured</span>
+      <h2 class="section-title">PROGRAM SPOTLIGHT</h2>
+      <p class="spotlight__intro">
+        This video highlights our STEM Leadership Summits, through which we educate and empower young minds in the fields of Science, Technology, Engineering &amp; Mathematics. The summits create awareness, kindle curiosity, and encourage serious interest among teens in STEM career fields.
+      </p>
+      <div class="spotlight__video-wrap">
+        <div class="spotlight__video-placeholder">
+          <div class="spotlight__play-btn">
+            <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8 5v14l11-7z"/>
+            </svg> 
+          </div>
+          <span class="spotlight__video-label">STEM Leadership Summit</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== OUR PROGRAMS ===== -->
+  <section class="programs" id="programs">
+    <div class="container">
+      <span class="section-label">What We Do</span>
+      <h2 class="section-title">OUR PROGRAMS</h2>
+      <div class="programs__grid">
+
+        <article class="program-card">
+          <div class="program-card__image-wrap">
+            <img src="" alt="Special surgical missions in UK" class="program-card__image" />
+            <div class="program-card__overlay"></div>
+          </div>
+          <div class="program-card__body">
+            <div class="program-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z"/>
+                <path d="M12 8v8M8 12h8"/>
+              </svg>
+            </div>
+            <h3 class="program-card__title">Special Surgeries</h3>
+            <p class="program-card__text">We lead life-saving surgical missions providing free hip, knee, and bone surgeries to those who cannot afford care.</p>
+            <a href="#" class="program-card__link">Learn More &rarr;</a>
+          </div>
+        </article>
+
+        <article class="program-card">
+          <div class="program-card__image-wrap">
+            <img src="" alt="Maternal and infant health clinic" class="program-card__image" />
+            <div class="program-card__overlay"></div>
+          </div>
+          <div class="program-card__body">
+            <div class="program-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+              </svg>
+            </div>
+            <h3 class="program-card__title">Maternal &amp; Infant Health</h3>
+            <p class="program-card__text">Our solar-powered clinics at strategic places provide vital prenatal and postnatal care to mothers and their newborns.</p>
+            <a href="#" class="program-card__link">Learn More &rarr;</a>
+          </div>
+        </article>
+
+        <article class="program-card">
+          <div class="program-card__image-wrap">
+            <img src="" alt="Scholarships for girls in Nigeria" class="program-card__image" />
+            <div class="program-card__overlay"></div>
+          </div>
+          <div class="program-card__body">
+            <div class="program-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+              </svg>
+            </div>
+            <h3 class="program-card__title">Scholarships for the less privilege</h3>
+            <p class="program-card__text">We provide life-changing scholarships to young women who are victims of terrorism and gender-based inequality.</p>
+            <a href="#" class="program-card__link">Learn More &rarr;</a>
+          </div>
+        </article>
+
+        <article class="program-card">
+          <div class="program-card__image-wrap">
+            <img src="" alt="Support for schools " class="program-card__image" />
+            <div class="program-card__overlay"></div>
+          </div>
+          <div class="program-card__body">
+            <div class="program-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="3" width="20" height="14" rx="2"/>
+                <path d="M8 21h8M12 17v4"/>
+              </svg>
+            </div>
+            <h3 class="program-card__title">Support for Schools</h3>
+            <p class="program-card__text">We equip schools with technology, supplies, and training to foster the next generation of African leaders.</p>
+            <a href="#" class="program-card__link">Learn More &rarr;</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SPECIAL SUPPORT (Celebrity) ===== -->
+  <section class="supporters" id="media">
+    <div class="container">
+      <div class="supporters__grid">
+        <div class="supporters__content">
+          <span class="section-label">High-Profile Backing</span>
+          <h2 class="section-title">SPECIAL SUPPORT</h2>
+          <p class="supporters__text">
+            We are fortunate to count Oprah, Prince Harry &amp; Meghan, Angelina Jolie, Daniel Craig, Andrew Garfield, and Zoe Saldana among our high-profile supporters. Our work has also been championed by Benedict Cumberbatch, Tom Holland, Charlize Theron, Chiwetel Ejiofor, David Oyelowo, Yvonne Orji, Chris Rock, and Jimmy Kimmel.
+          </p>
+        <!--  <a href="#" class="btn btn--primary">SEE CELEBRITY SUPPORT</a> -->
+        </div>
+        <div class="supporters__image-wrap">
+          <img src="" alt="Celebrity supporters of Support way worldwide" class="supporters__image supporters__image--main" />
+          <div class="supporters__image-stack">
+            <img src="" alt="Support way worldwide supporter" class="supporters__image supporters__image--stack1" />
+            <img src="" alt="Support way worldwide supporter" class="supporters__image supporters__image--stack2" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== JOIN / CTA BANNER ===== -->
+  <section class="cta-banner" id="join">
+    <div class="cta-banner__bg">
+      <img src="" alt="Join Support way worldwide" class="cta-banner__bg-img" />
+      <div class="cta-banner__overlay"></div>
+    </div>
+    <div class="container cta-banner__content">
+      <h2 class="cta-banner__title">Be The Difference</h2>
+      <p class="cta-banner__text"><!--Join our community and-->Help us save more lives across Europe and beyond. Every contribution matters.</p>
+      <div class="cta-banner__actions">
+        <a href="#" class="btn btn--primary">DONATE NOW</a>
+       <!-- <a href="#" class="btn btn--white">JOIN OUR EMAIL LIST</a>-->
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BADGES ===== -->
+  <section class="badges">
+    <div class="container">
+      <p class="badges__label">Recognized &amp; Accredited By</p>
+      <div class="badges__row">
+        <div class="badge__item">
+          <img src="" alt="GlobalGiving Vetted Organization 2023" class="badge__img" />
+          <span class="badge__text">Vetted Organization 2023</span>
+        </div>
+        <div class="badge__item">
+          <img src="" alt="Candid Platinum Transparency 2024" class="badge__img" />
+          <span class="badge__text">Platinum Transparency 2024</span>
+        </div>
+        <div class="badge__item">
+          <img src="" alt="GlobalGiving Staff Favorite 2019" class="badge__img" />
+          <span class="badge__text">Staff Favorite 2019</span>
+        </div>
+       <!-- <div class="badge__item">
+          <img src="" alt="Top Charity Nigeria 2021" class="badge__img" />
+          <span class="badge__text">Top Charity Nigeria 2021</span> -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" id="contact">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a href="#" class="footer__logo">
+            <img src="" alt="Support way worldwide" class="footer__logo-img" />
+            <span class="footer__logo-text">Support way worldwide</span>
+          </a>
+          <p class="footer__tagline">Saving &amp; transforming lives<br />all over the globe every day.</p>
+          <a href="#join" class="btn btn--primary footer__cta">JOIN OUR EMAIL LIST</a>
+        </div>
+
+        <div class="footer__nav">
+          <h4 class="footer__nav-title">Quick Links</h4>
+          <ul class="footer__nav-list">
+            <li><a href="#about" class="footer__nav-link">About</a></li>
+            <li><a href="#programs" class="footer__nav-link">Programs</a></li>
+            <li><a href="#media" class="footer__nav-link">Media</a></li>
+            <li><a href="#" class="footer__nav-link">Events</a></li>
+            <li><a href="#join" class="footer__nav-link">Join Us</a></li>
+            <li><a href="#" class="footer__nav-link">COVID Response</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__programs">
+          <h4 class="footer__nav-title">Programs</h4>
+          <ul class="footer__nav-list">
+            <li><a href="#" class="footer__nav-link">Medical Missions</a></li>
+            <li><a href="#" class="footer__nav-link">Mental &amp; Menstrual Health</a></li>
+            <li><a href="#" class="footer__nav-link">Mother and Child</a></li>
+            <li><a href="#" class="footer__nav-link">Scholarships</a></li>
+            <li><a href="#" class="footer__nav-link">Support for Schools</a></li>
+            <li><a href="#" class="footer__nav-link">African Health Symposia</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__contact">
+          <h4 class="footer__nav-title">Contact Us</h4>
+          <address class="footer__address">
+            <p>5482 Wilshire Blvd. #186</p>
+            <p>Los Angeles, CA 90036</p>
+            <p><a href="tel:7084391462" class="footer__contact-link">708-439-1462</a></p>
+            <p><a href="mailto:aonyema@geanco.org" class="footer__contact-link">@supportwayworldco.org</a></p>
+          </address>
+          <div class="footer__social">
+           <!-- <a href="#" class="footer__social-link" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="#" class="footer__social-link" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+            </a>
+            <a href="#" class="footer__social-link" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+            </a> -->
+            <a href="#" class="footer__social-link" aria-label="Twitter / X">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+    
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__legal">
+          <strong>The Support Way worldwide is a 501(c)(3) tax-exempt organization.</strong><br />
+          All donations are tax deductible to the fullest extent allowed by law. EIN: 20-3498204
+        </p>
+        <p class="footer__copy">&copy; 2026 The Suport Way Worldwide foundation. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Navbar scroll effect
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('navbar--scrolled', window.scrollY > 60);
+    });
+
+    // Mobile nav toggle
+    const navToggle = document.getElementById('navToggle');
+    const navMenu = document.getElementById('navMenu');
+    navToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('navbar__nav--open');
+      navToggle.classList.toggle('navbar__toggle--active');
+    });
+
+    // Counter animation
+    function animateCounter(el) {
+      const target = parseInt(el.getAttribute('data-target'), 10);
+      const isM = el.classList.contains('impact__number--m');
+      const duration = 2000;
+      const step = target / (duration / 16);
+      let current = 0;
+      const timer = setInterval(() => {
+        current += step;
+        if (current >= target) {
+          current = target;
+          clearInterval(timer);
+        }
+        el.textContent = Math.floor(current).toLocaleString() + (isM ? 'M+' : '+');
+      }, 16);
+    }
+
+    const counters = document.querySelectorAll('.impact__number');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCounter(entry.target);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+    counters.forEach(c => observer.observe(c));
+  </script>
+
+</body>
+</html>
