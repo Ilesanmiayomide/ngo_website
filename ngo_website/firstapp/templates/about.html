@@ -1,0 +1,198 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}About Us — Support Way Worldwide{% endblock %}
+
+{% block extra_css %}
+  <link rel="stylesheet" href="{% static 'about.css' %}" />
+{% endblock %}
+
+{% block content %}
+
+  <!-- ===== PAGE HERO ===== -->
+  <section class="page-hero">
+    <div class="page-hero__bg">
+      <img src="" alt="Support Way Worldwide team in the field" class="page-hero__bg-img" />
+      <div class="page-hero__overlay"></div>
+    </div>
+    <div class="container page-hero__content">
+      <p class="page-hero__eyebrow">OUR STORY</p>
+      <h1 class="page-hero__title">About Support Way Worldwide</h1>
+    </div>
+  </section>
+
+  <!-- ===== STORY SECTION ===== -->
+  <section class="story">
+    <div class="container">
+      <div class="story__grid">
+        <div class="story__image-wrap">
+          <img src="" alt="Support Way Worldwide founder" class="story__image" />
+          <div class="story__image-accent"></div>
+        </div>
+        <div class="story__content">
+          <span class="section-label">How It Began</span>
+          <h2 class="section-title">OUR STORY</h2>
+          <p class="story__text">
+            Support Way Worldwide was founded on a powerful conviction: that quality healthcare and education are human rights, not privileges. What began as a series of volunteer surgical missions has grown into a global network of life-saving programs touching thousands of lives each year.
+          </p>
+          <p class="story__text">
+            Today, our dedicated team of doctors, nurses, educators, and community advocates work tirelessly across Europe and beyond — running innovative solar-powered maternal health clinics, funding scholarships for young women affected by conflict, and delivering world-class surgical care to communities with no other option.
+          </p>
+          <p class="story__text">
+            Every program we run, every life we touch, is made possible by supporters like you — individuals, corporations, and foundations who believe in a world where no one is left behind.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MISSION & VISION ===== -->
+  <section class="mission-vision">
+    <div class="container">
+      <div class="mission-vision__grid">
+        <div class="mission-vision__card mission-vision__card--mission">
+          <div class="mission-vision__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M12 8v4l3 3"/>
+            </svg>
+          </div>
+          <h3 class="mission-vision__title">Our Mission</h3>
+          <p class="mission-vision__text">
+            To save and transform the lives of the poor and vulnerable through high-impact surgical missions, maternal and infant healthcare, scholarships for young women, and educational programs — delivered with compassion, integrity, and excellence.
+          </p>
+        </div>
+
+        <div class="mission-vision__card mission-vision__card--vision">
+          <div class="mission-vision__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+              <circle cx="12" cy="12" r="3"/>
+            </svg>
+          </div>
+          <h3 class="mission-vision__title">Our Vision</h3>
+          <p class="mission-vision__text">
+            A world where every person — regardless of geography, income, or circumstance — has access to quality healthcare and education. We envision self-sustaining communities empowered by knowledge, health, and hope.
+          </p>
+        </div>
+
+        <div class="mission-vision__card mission-vision__card--values">
+          <div class="mission-vision__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+            </svg>
+          </div>
+          <h3 class="mission-vision__title">Our Values</h3>
+          <p class="mission-vision__text">
+            Compassion, transparency, and excellence guide everything we do. We believe in honoring the dignity of every individual we serve, maintaining the highest standards of accountability, and relentlessly pursuing greater impact with every dollar entrusted to us.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== IMPACT NUMBERS (small strip) ===== -->
+  <section class="about-impact">
+    <div class="about-impact__bg">
+      <img src="" alt="Support Way Worldwide work in the field" class="about-impact__bg-img" />
+      <div class="about-impact__overlay"></div>
+    </div>
+    <div class="container about-impact__inner">
+      <div class="about-impact__stat">
+        <span class="about-impact__number">15,000+</span>
+        <p class="about-impact__label">Women &amp; Children Screened</p>
+      </div>
+      <div class="about-impact__divider"></div>
+      <div class="about-impact__stat">
+        <span class="about-impact__number">8,200+</span>
+        <p class="about-impact__label">Healthy Deliveries Supported</p>
+      </div>
+      <div class="about-impact__divider"></div>
+      <div class="about-impact__stat">
+        <span class="about-impact__number">3,400+</span>
+        <p class="about-impact__label">Free Surgeries Performed</p>
+      </div>
+      <div class="about-impact__divider"></div>
+      <div class="about-impact__stat">
+        <span class="about-impact__number">$12M+</span>
+        <p class="about-impact__label">Donated Medical Equipment</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== LEADERSHIP / TEAM ===== -->
+  <section class="team">
+    <div class="container">
+      <span class="section-label">The People Behind The Work</span>
+      <h2 class="section-title">OUR LEADERSHIP</h2>
+      <p class="team__intro">
+        Our board and leadership team bring decades of experience in medicine, public health, education, and international development to guide Support Way Worldwide's mission.
+      </p>
+
+      <div class="team__grid">
+
+        <div class="team__card">
+          <div class="team__photo-wrap">
+            <img src="" alt="Dr. A. Onyema — Founder &amp; Executive Director" class="team__photo" />
+          </div>
+          <div class="team__info">
+            <h3 class="team__name">Dr. A. Onyema</h3>
+            <p class="team__role">Founder &amp; Executive Director</p>
+            <p class="team__bio">A board-certified orthopaedic surgeon and passionate humanitarian, Dr. Onyema founded Support Way Worldwide to bridge the gap between world-class medical care and those who need it most.</p>
+          </div>
+        </div>
+
+        <div class="team__card">
+          <div class="team__photo-wrap">
+            <img src="" alt="Dr. M. Adeyemi — Medical Director" class="team__photo" />
+          </div>
+          <div class="team__info">
+            <h3 class="team__name">Dr. M. Adeyemi</h3>
+            <p class="team__role">Medical Director</p>
+            <p class="team__bio">With over 20 years of surgical experience across three continents, Dr. Adeyemi leads our medical mission teams and oversees the clinical standards of all Support Way Worldwide health programs.</p>
+          </div>
+        </div>
+
+        <div class="team__card">
+          <div class="team__photo-wrap">
+            <img src="" alt="Ms. K. Lawson — Director of Programs" class="team__photo" />
+          </div>
+          <div class="team__info">
+            <h3 class="team__name">Ms. K. Lawson</h3>
+            <p class="team__role">Director of Programs</p>
+            <p class="team__bio">A seasoned nonprofit leader, Ms. Lawson manages our scholarship and school support initiatives, ensuring every program reaches the communities that need it most.</p>
+          </div>
+        </div>
+
+        <div class="team__card">
+          <div class="team__photo-wrap">
+            <img src="" alt="Mr. J. Okafor — Director of Development" class="team__photo" />
+          </div>
+          <div class="team__info">
+            <h3 class="team__name">Mr. J. Okafor</h3>
+            <p class="team__role">Director of Development</p>
+            <p class="team__bio">Mr. Okafor leads fundraising strategy and partnership development, building the coalitions of support that allow Support Way Worldwide to expand its reach year after year.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA BANNER ===== -->
+  <section class="cta-banner">
+    <div class="cta-banner__bg">
+      <img src="" alt="Join Support Way Worldwide" class="cta-banner__bg-img" />
+      <div class="cta-banner__overlay"></div>
+    </div>
+    <div class="container cta-banner__content">
+      <h2 class="cta-banner__title">Join Our Mission</h2>
+      <p class="cta-banner__text">Whether you donate, volunteer, or spread the word — you are part of the solution. Every action counts.</p>
+      <div class="cta-banner__actions">
+        <a href="#" class="btn btn--primary">DONATE NOW</a>
+        <a href="{% url 'contact' %}" class="btn btn--outline">GET INVOLVED</a>
+      </div>
+    </div>
+  </section>
+
+{% endblock %}

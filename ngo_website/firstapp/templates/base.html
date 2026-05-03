@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% load static %}
+    <title>{% block title %}Support Way Worldwide{% endblock %}</title>
+
+  <!-- Base Styles -->
+  <link rel="stylesheet" href="{% static 'base.css' %}" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Barlow:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Page-specific CSS -->
+  {% block extra_css %}{% endblock %}
+</head>
+<body>
+
+  <!-- ===== ANNOUNCEMENT BAR ===== -->
+  <div class="announcement-bar">
+    <a href="#" class="announcement-bar__link">DONATE NOW &rarr;</a>
+  </div>
+
+  <!-- ===== NAVBAR ===== -->
+  <header class="navbar" id="navbar">
+    <div class="navbar__container">
+      <a href="{% url 'home' %}" class="navbar__logo">
+        <img src="" alt="Support Way Worldwide Logo" class="navbar__logo-img" />
+        <span class="navbar__logo-text">Support Way Worldwide</span>
+      </a>
+
+      <button class="navbar__toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="navbar__nav" id="navMenu">
+        <ul class="navbar__list">
+          <li class="navbar__item"><a href="{% url 'about' %}" class="navbar__link">ABOUT</a></li>
+          <li class="navbar__item navbar__item--dropdown">
+            <a href="{% url 'programs' %}" class="navbar__link">PROGRAMS</a>
+            <ul class="navbar__dropdown">
+              <li><a href="{% url 'programs' %}#medical-missions" class="navbar__dropdown-link">Medical Missions</a></li>
+              <li><a href="{% url 'programs' %}#mental-health" class="navbar__dropdown-link">Mental &amp; Menstrual Health</a></li>
+              <li><a href="{% url 'programs' %}#mother-child" class="navbar__dropdown-link">Mother and Child</a></li>
+              <li><a href="{% url 'programs' %}#scholarships" class="navbar__dropdown-link">Scholarships</a></li>
+              <li><a href="{% url 'programs' %}#schools" class="navbar__dropdown-link">Support for Schools</a></li>
+              <li><a href="{% url 'programs' %}#symposia" class="navbar__dropdown-link">African Health Symposia</a></li>
+            </ul>
+          </li>
+          <li class="navbar__item navbar__item--dropdown">
+            <a href="#media" class="navbar__link">MEDIA</a>
+            <ul class="navbar__dropdown">
+              <li><a href="#" class="navbar__dropdown-link">Media</a></li>
+              <li><a href="#" class="navbar__dropdown-link">Celebrity Support</a></li>
+              <li><a href="#" class="navbar__dropdown-link">Podcasts</a></li>
+            </ul>
+          </li>
+          <li class="navbar__item"><a href="#" class="navbar__link">EVENTS</a></li>
+          <li class="navbar__item"><a href="{% url 'contact' %}" class="navbar__link">JOIN US</a></li>
+        </ul>
+        <a href="#" class="navbar__donate-btn">DONATE</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== PAGE CONTENT ===== -->
+  {% block content %}{% endblock %}
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" id="contact">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a href="{% url 'home' %}" class="footer__logo">
+            <img src="" alt="Support Way Worldwide" class="footer__logo-img" />
+            <span class="footer__logo-text">Support Way Worldwide</span>
+          </a>
+          <p class="footer__tagline">Saving &amp; transforming lives<br />all over the globe every day.</p>
+          <a href="{% url 'contact' %}" class="btn btn--primary footer__cta">JOIN OUR EMAIL LIST</a>
+        </div>
+
+        <div class="footer__nav">
+          <h4 class="footer__nav-title">Quick Links</h4>
+          <ul class="footer__nav-list">
+            <li><a href="{% url 'about' %}" class="footer__nav-link">About</a></li>
+            <li><a href="{% url 'programs' %}" class="footer__nav-link">Programs</a></li>
+            <li><a href="#" class="footer__nav-link">Media</a></li>
+            <li><a href="#" class="footer__nav-link">Events</a></li>
+            <li><a href="{% url 'contact' %}" class="footer__nav-link">Join Us</a></li>
+            <li><a href="#" class="footer__nav-link">COVID Response</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__programs">
+          <h4 class="footer__nav-title">Programs</h4>
+          <ul class="footer__nav-list">
+            <li><a href="{% url 'programs' %}#medical-missions" class="footer__nav-link">Medical Missions</a></li>
+            <li><a href="{% url 'programs' %}#mental-health" class="footer__nav-link">Mental &amp; Menstrual Health</a></li>
+            <li><a href="{% url 'programs' %}#mother-child" class="footer__nav-link">Mother and Child</a></li>
+            <li><a href="{% url 'programs' %}#scholarships" class="footer__nav-link">Scholarships</a></li>
+            <li><a href="{% url 'programs' %}#schools" class="footer__nav-link">Support for Schools</a></li>
+            <li><a href="{% url 'programs' %}#symposia" class="footer__nav-link">African Health Symposia</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__contact">
+          <h4 class="footer__nav-title">Contact Us</h4>
+          <address class="footer__address">
+            <p>5482 Wilshire Blvd. #186</p>
+            <p>Los Angeles, CA 90036</p>
+            <p><a href="tel:7084391462" class="footer__contact-link">708-439-1462</a></p>
+            <p><a href="mailto:info@supportwayworldwide.org" class="footer__contact-link">info@supportwayworldwide.org</a></p>
+          </address>
+          <div class="footer__social">
+            <a href="#" class="footer__social-link" aria-label="Twitter / X">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="#" class="footer__social-link" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="#" class="footer__social-link" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__legal">
+          <strong>The Support Way Worldwide is a 501(c)(3) tax-exempt organization.</strong><br />
+          All donations are tax deductible to the fullest extent allowed by law. EIN: 20-3498204
+        </p>
+        <p class="footer__copy">&copy; 2026 The Support Way Worldwide Foundation. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== BASE JS ===== -->
+  <script>
+    // Navbar scroll effect
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('navbar--scrolled', window.scrollY > 60);
+    });
+
+    // Mobile nav toggle
+    const navToggle = document.getElementById('navToggle');
+    const navMenu = document.getElementById('navMenu');
+    navToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('navbar__nav--open');
+      navToggle.classList.toggle('navbar__toggle--active');
+    });
+  </script>
+
+  {% block extra_js %}{% endblock %}
+
+</body>
+</html>

@@ -1,0 +1,155 @@
+/* ============================================================
+   SUPPORT WAY WORLDWIDE — programs.css
+   Programs page-specific styles only.
+   Global styles live in base.css
+   ============================================================ */
+
+/* ============================================================
+   PROGRAMS INTRO
+   ============================================================ */
+.programs-intro {
+  padding-block: var(--space-2xl) var(--space-xl);
+  background-color: var(--clr-white);
+  border-bottom: 1px solid #eee;
+}
+
+.programs-intro__inner {
+  max-width: 720px;
+}
+
+.programs-intro__text {
+  font-size: var(--fs-md);
+  font-weight: var(--fw-light);
+  color: var(--clr-mid);
+  line-height: 1.8;
+}
+
+/* ============================================================
+   PROGRAM DETAIL SECTIONS (alternating layout)
+   ============================================================ */
+.program-detail {
+  padding-block: var(--space-2xl);
+  background-color: var(--clr-white);
+}
+
+.program-detail--alt {
+  background-color: var(--clr-light);
+}
+
+.program-detail__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-xl);
+  align-items: center;
+}
+
+/* Content before image on desktop for alternating layout */
+.program-detail__grid--reversed {
+  /* On mobile, content comes first via order */
+}
+
+.program-detail__image-wrap {
+  position: relative;
+}
+
+.program-detail__image {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  background-color: var(--clr-light);
+}
+
+.program-detail--alt .program-detail__image {
+  background-color: #ddd;
+}
+
+.program-detail__image-accent {
+  position: absolute;
+  bottom: -1.5rem;
+  right: -1.5rem;
+  width: 55%;
+  height: 55%;
+  border: 4px solid var(--clr-primary);
+  border-radius: var(--radius-lg);
+  z-index: -1;
+}
+
+.program-detail__image-accent--left {
+  right: auto;
+  left: -1.5rem;
+}
+
+.program-detail__content { max-width: 560px; }
+
+.program-detail__text {
+  font-size: var(--fs-md);
+  font-weight: var(--fw-light);
+  color: var(--clr-mid);
+  line-height: 1.8;
+  margin-bottom: var(--space-lg);
+}
+
+/* Highlights list */
+.program-detail__highlights {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-lg);
+}
+
+.program-detail__highlights li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: var(--fs-base);
+  font-weight: var(--fw-medium);
+  color: var(--clr-dark);
+  line-height: 1.5;
+}
+
+.program-detail__highlight-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background-color: rgba(200,57,43,.1);
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+  color: var(--clr-primary);
+}
+
+.program-detail__highlight-icon svg {
+  width: 13px;
+  height: 13px;
+}
+
+/* ============================================================
+   RESPONSIVE — TABLET  (≥ 640px)
+   ============================================================ */
+@media (min-width: 640px) {
+  .program-detail__image { height: 440px; }
+}
+
+/* ============================================================
+   RESPONSIVE — DESKTOP  (≥ 960px)
+   ============================================================ */
+@media (min-width: 960px) {
+  .program-detail__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-3xl);
+  }
+
+  /* Reversed grid: swap visual order so image goes right */
+  .program-detail__grid--reversed .program-detail__content { order: 1; }
+  .program-detail__grid--reversed .program-detail__image-wrap { order: 2; }
+}
+
+/* ============================================================
+   RESPONSIVE — LARGE DESKTOP  (≥ 1200px)
+   ============================================================ */
+@media (min-width: 1200px) {
+  .program-detail__image { height: 480px; }
+}
