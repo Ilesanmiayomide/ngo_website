@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}Payment Cancelled{% endblock %}
+
+{% block content %}
+  <section class="payment-result">
+    <div class="container">
+      <h1>Payment Cancelled</h1>
+      <p>Your payment was not completed. If you want to try again, please return to the donation button.</p>
+      <a href="{% url 'home' %}" class="btn btn--primary">Return Home</a>
+    </div>
+  </section>
+{% endblock %}

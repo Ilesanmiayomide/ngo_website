@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/6.0/ref/settings/
 """
 
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -20,12 +21,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-uv+5&gk-l*9qdr85cory(c80c1&!dp(p%oa!ol3vrcl)ur5esz'
+SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', 'django-insecure-uv+5&gk-l*9qdr85cory(c80c1&!dp(p%oa!ol3vrcl)ur5esz')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv('DJANGO_DEBUG', 'True') == 'True'
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+
+PAYPAL_CLIENT_ID = os.getenv('PAYPAL_CLIENT_ID', 'AWqyMA_Z0XW4OjpnyotbkOd1CBZAXpE9zEFPAfG0btqabAelBtfHjQlOcwhN6OPOgDhtDFagW70-sVz8')
+PAYPAL_SECRET = os.getenv('PAYPAL_SECRET', 'EE8V02eG6_-ZkNIhxF8r-WB2MKGYrfzyD2jvvWoE5x_AFQJQGk8YrhVkjWkHmW2abjTyPVgyErEEPTVp')
+PAYPAL_BASE_URL = os.getenv('PAYPAL_BASE_URL', 'https://api-m.sandbox.paypal.com')
 
 
 # Application definition
@@ -80,6 +85,7 @@ DATABASES = {
     }
 }
 
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Password validation
 # https://docs.djangoproject.com/en/6.0/ref/settings/#auth-password-validators
