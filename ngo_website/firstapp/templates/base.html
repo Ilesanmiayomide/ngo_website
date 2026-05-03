@@ -21,14 +21,19 @@
 
   <!-- ===== ANNOUNCEMENT BAR ===== -->
   <div class="announcement-bar">
-    <a href="#" class="announcement-bar__link">DONATE NOW &rarr;</a>
+    <form action="{% url 'create_donation' %}" method="post">
+    {% csrf_token %}
+    <button type="submit" class="announcement-bar__link" >Donate  NOW &rarr;</button>
+    <!--<a href="#" class="announcement-bar__link">DONATE NOW &rarr;</a> -->
+
+  </form>
   </div>
 
   <!-- ===== NAVBAR ===== -->
   <header class="navbar" id="navbar">
     <div class="navbar__container">
       <a href="{% url 'home' %}" class="navbar__logo">
-        <img src="" alt="Support Way Worldwide Logo" class="navbar__logo-img" />
+        <img src="{% static 'images/logo.png' %}" alt="Support Way Worldwide Logo" class="navbar__logo-img" />
         <span class="navbar__logo-text">Support Way Worldwide</span>
       </a>
 
