@@ -39,7 +39,7 @@
     <div class="container">
       <div class="program-detail__grid">
         <div class="program-detail__image-wrap">
-          <img src="" alt="Medical missions — free surgeries" class="program-detail__image" />
+          <img src="{% static 'images/Aa.jpg' %}" alt="Medical missions — free surgeries" class="program-detail__image" />
           <div class="program-detail__image-accent"></div>
         </div>
         <div class="program-detail__content">
@@ -68,7 +68,7 @@
               $12M+ in donated medical equipment &amp; supplies
             </li>
           </ul>
-          <a href="#" class="btn btn--primary">SUPPORT THIS PROGRAM</a>
+          <a href="{% url 'donate' %}" class="btn btn--primary">SUPPORT THIS PROGRAM</a>
         </div>
       </div>
     </div>
@@ -104,10 +104,10 @@
               Trained local health advocates in 12+ communities
             </li>
           </ul>
-          <a href="#" class="btn btn--primary">SUPPORT THIS PROGRAM</a>
+          <a href="{% url 'donate' %}" class="btn btn--primary">SUPPORT THIS PROGRAM</a>
         </div>
         <div class="program-detail__image-wrap">
-          <img src="" alt="Mental and menstrual health program" class="program-detail__image" />
+          <img src="{% static 'images/j.jpg' %}" alt="Mental and menstrual health program" class="program-detail__image" />
           <div class="program-detail__image-accent program-detail__image-accent--left"></div>
         </div>
       </div>
@@ -119,7 +119,7 @@
     <div class="container">
       <div class="program-detail__grid">
         <div class="program-detail__image-wrap">
-          <img src="" alt="Maternal and infant health clinics" class="program-detail__image" />
+          <img src="{% static 'images/i.jpg' %}" alt="Maternal and infant health clinics" class="program-detail__image" />
           <div class="program-detail__image-accent"></div>
         </div>
         <div class="program-detail__content">
@@ -148,7 +148,7 @@
               100% solar-powered clinic infrastructure
             </li>
           </ul>
-          <a href="#" class="btn btn--primary">SUPPORT THIS PROGRAM</a>
+          <a href="{% url 'donate' %}" class="btn btn--primary">SUPPORT THIS PROGRAM</a>
         </div>
       </div>
     </div>
@@ -162,7 +162,7 @@
           <span class="section-label">Program 04</span>
           <h2 class="section-title">SCHOLARSHIPS</h2>
           <p class="program-detail__text">
-            Education is one of the most powerful tools for breaking the cycle of poverty. We provide full and partial scholarships to young women who are victims of terrorism, conflict, and gender-based discrimination — giving them the chance to build a future on their own terms.
+            Education is one of the most powerful tools for breaking the cycle of poverty. We provide full and partial scholarships to young children who are victims of terrorism, conflict, and discrimination — giving them the chance to build a future on their own terms.
           </p>
           <ul class="program-detail__highlights">
             <li>
@@ -175,7 +175,7 @@
               <span class="program-detail__highlight-icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
               </span>
-              Priority for survivors of gender-based violence
+              Priority for all children regardless of thier race
             </li>
             <li>
               <span class="program-detail__highlight-icon">
@@ -184,10 +184,10 @@
               Mentorship and career support included
             </li>
           </ul>
-          <a href="#" class="btn btn--primary">SUPPORT THIS PROGRAM</a>
+          <a href="{% url 'donate' %}" class="btn btn--primary">SUPPORT THIS PROGRAM</a>
         </div>
         <div class="program-detail__image-wrap">
-          <img src="" alt="Scholarships for young women" class="program-detail__image" />
+          <img src="{% static 'images/r.png' %}" alt="Scholarships for young women" class="program-detail__image" />
           <div class="program-detail__image-accent program-detail__image-accent--left"></div>
         </div>
       </div>
@@ -199,7 +199,7 @@
     <div class="container">
       <div class="program-detail__grid">
         <div class="program-detail__image-wrap">
-          <img src="" alt="Support for schools — technology and supplies" class="program-detail__image" />
+          <img src="{% static 'images/s.png' %}" alt="Support for schools — technology and supplies" class="program-detail__image" />
           <div class="program-detail__image-accent"></div>
         </div>
         <div class="program-detail__content">
@@ -228,7 +228,7 @@
               Teacher professional development training
             </li>
           </ul>
-          <a href="#" class="btn btn--primary">SUPPORT THIS PROGRAM</a>
+          <a href="{% url 'donate' %}" class="btn btn--primary">SUPPORT THIS PROGRAM</a>
         </div>
       </div>
     </div>
@@ -264,10 +264,10 @@
               Published policy recommendations &amp; research findings
             </li>
           </ul>
-          <a href="#" class="btn btn--primary">SUPPORT THIS PROGRAM</a>
+          <a href="{% url 'donate' %}" class="btn btn--primary">SUPPORT THIS PROGRAM</a>
         </div>
         <div class="program-detail__image-wrap">
-          <img src="" alt="Health Symposia — expert panel discussions" class="program-detail__image" />
+          <img src="{% static 'images/ac.jpg' %}" alt="Health Symposia — expert panel discussions" class="program-detail__image" />
           <div class="program-detail__image-accent program-detail__image-accent--left"></div>
         </div>
       </div>
@@ -284,7 +284,7 @@
       <h2 class="cta-banner__title">Every Program Needs Your Support</h2>
       <p class="cta-banner__text">Your donation directly funds these life-changing programs. Give today and help us reach more communities in need.</p>
       <div class="cta-banner__actions">
-        <a href="#" class="btn btn--primary">DONATE NOW</a>
+        <a href="{% url 'donate' %}" class="btn btn--primary">DONATE NOW</a>
         <a href="{% url 'contact' %}" class="btn btn--outline">VOLUNTEER WITH US</a>
       </div>
     </div>

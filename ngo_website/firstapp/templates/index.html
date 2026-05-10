@@ -19,7 +19,7 @@
       <p class="hero__eyebrow">EMPOWERED BY YOU</p>
       <h1 class="hero__headline">We Save &amp; Transform<br />Lives around the world<br />Every Day</h1>
       <div class="hero__actions">
-        <a href="#" class="btn btn--primary">DONATE NOW</a>
+        <a href="{% url 'donate' %}" class="btn btn--primary">DONATE NOW</a>
         <a href="#about" class="btn btn--outline">LEARN MORE</a>
       </div>
     </div>
@@ -34,7 +34,7 @@
     <div class="container">
       <div class="about__grid">
         <div class="about__image-wrap">
-          <img src="" alt="Support Way Worldwide providing medical care" class="about__image" />
+          <img src="{% static 'images/c.jpg' %}" alt="Support Way Worldwide providing medical care" class="about__image" />
           <div class="about__image-accent"></div>
         </div>
         <div class="about__content">
@@ -78,8 +78,8 @@
       </div>
     </div>
   </section>
-
-  <!-- ===== PROGRAM SPOTLIGHT ===== -->
+<!--
+     ===== PROGRAM SPOTLIGHT ===== 
   <section class="spotlight" id="spotlight">
     <div class="container">
       <span class="section-label">Featured</span>
@@ -99,7 +99,7 @@
       </div>
     </div>
   </section>
-
+    -->
   <!-- ===== OUR PROGRAMS ===== -->
   <section class="programs" id="programs">
     <div class="container">
@@ -109,7 +109,7 @@
 
         <article class="program-card">
           <div class="program-card__image-wrap">
-            <img src="" alt="Special surgical missions" class="program-card__image" />
+            <img src="{% static 'images/d.jpg' %}" alt="Special surgical missions" class="program-card__image" />
             <div class="program-card__overlay"></div>
           </div>
           <div class="program-card__body">
@@ -127,7 +127,7 @@
 
         <article class="program-card">
           <div class="program-card__image-wrap">
-            <img src="" alt="Maternal and infant health clinic" class="program-card__image" />
+            <img src="{% static 'images/i.jpg' %}" alt="Maternal and infant health clinic" class="program-card__image" />
             <div class="program-card__overlay"></div>
           </div>
           <div class="program-card__body">
@@ -144,7 +144,7 @@
 
         <article class="program-card">
           <div class="program-card__image-wrap">
-            <img src="" alt="Scholarships for the less privileged" class="program-card__image" />
+            <img src="{% static 'images/r.png' %}" alt="Scholarships for the less privileged" class="program-card__image" />
             <div class="program-card__overlay"></div>
           </div>
           <div class="program-card__body">
@@ -155,14 +155,14 @@
               </svg>
             </div>
             <h3 class="program-card__title">Scholarships for the Less Privileged</h3>
-            <p class="program-card__text">We provide life-changing scholarships to young women who are victims of terrorism and gender-based inequality.</p>
+            <p class="program-card__text">We provide life-changing scholarships to young children who are deprived of access to sound education as a result of low finance.</p>
             <a href="{% url 'programs' %}#scholarships" class="program-card__link">Learn More &rarr;</a>
           </div>
         </article>
 
         <article class="program-card">
           <div class="program-card__image-wrap">
-            <img src="" alt="Support for schools" class="program-card__image" />
+            <img src="{% static 'images/s.png' %} " alt="Support for schools" class="program-card__image" />
             <div class="program-card__overlay"></div>
           </div>
           <div class="program-card__body">
@@ -194,10 +194,10 @@
           </p>
         </div>
         <div class="supporters__image-wrap">
-          <img src="" alt="Celebrity supporters of Support Way Worldwide" class="supporters__image supporters__image--main" />
+          <img src="{% static 'images/t.png' %}" alt="Celebrity supporters of Support Way Worldwide" class="supporters__image supporters__image--main" />
           <div class="supporters__image-stack">
-            <img src="" alt="Support Way Worldwide supporter" class="supporters__image supporters__image--stack1" />
-            <img src="" alt="Support Way Worldwide supporter" class="supporters__image supporters__image--stack2" />
+            <img src="{% static 'images/u.png' %}" alt="Support Way Worldwide supporter" class="supporters__image supporters__image--stack1" />
+            <img src="{% static 'images/w.png'%}" alt="Support Way Worldwide supporter" class="supporters__image supporters__image--stack2" />
           </div>
         </div>
       </div>
@@ -207,14 +207,14 @@
   <!-- ===== JOIN / CTA BANNER ===== -->
   <section class="cta-banner" id="join">
     <div class="cta-banner__bg">
-      <img src="" alt="Join Support Way Worldwide" class="cta-banner__bg-img" />
+      <img src="{% static 'images/logo.png' %}" alt="Join Support Way Worldwide" class="cta-banner__bg-img" />
       <div class="cta-banner__overlay"></div>
     </div>
     <div class="container cta-banner__content">
       <h2 class="cta-banner__title">Be The Difference</h2>
       <p class="cta-banner__text">Help us save more lives across Europe and beyond. Every contribution matters.</p>
       <div class="cta-banner__actions">
-        <a href="#" class="btn btn--primary">DONATE NOW</a>
+        <a href="{% url 'donate' %}" class="btn btn--primary">DONATE NOW</a>
       </div>
     </div>
   </section>
@@ -225,15 +225,15 @@
       <p class="badges__label">Recognized &amp; Accredited By</p>
       <div class="badges__row">
         <div class="badge__item">
-          <img src="" alt="GlobalGiving Vetted Organization 2023" class="badge__img" />
+          <img src="{% static 'images/x.png' %}" alt="GlobalGiving Vetted Organization 2023" class="badge__img" />
           <span class="badge__text">Vetted Organization 2023</span>
         </div>
         <div class="badge__item">
-          <img src="" alt="Candid Platinum Transparency 2024" class="badge__img" />
+          <img src="{% static 'images/y.png' %}" alt="Candid Platinum Transparency 2024" class="badge__img" />
           <span class="badge__text">Platinum Transparency 2024</span>
         </div>
         <div class="badge__item">
-          <img src="" alt="GlobalGiving Staff Favorite 2019" class="badge__img" />
+          <img src="{% static 'images/z.png' %}" alt="GlobalGiving Staff Favorite 2019" class="badge__img" />
           <span class="badge__text">Staff Favorite 2019</span>
         </div>
       </div>

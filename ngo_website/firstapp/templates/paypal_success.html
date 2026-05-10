@@ -7,6 +7,9 @@
     <div class="container">
       <h1>Payment Successful</h1>
       <p>Thank you for your donation! Your payment was captured successfully.</p>
+      {% if order_id %}
+        <p><strong>Order ID:</strong> {{ order_id }}</p>
+      {% endif %}
       <a href="{% url 'home' %}" class="btn btn--primary">Return Home</a>
     </div>
   </section>

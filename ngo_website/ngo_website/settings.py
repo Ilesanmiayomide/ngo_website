@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 PAYPAL_CLIENT_ID = os.getenv('PAYPAL_CLIENT_ID', 'AWqyMA_Z0XW4OjpnyotbkOd1CBZAXpE9zEFPAfG0btqabAelBtfHjQlOcwhN6OPOgDhtDFagW70-sVz8')
 PAYPAL_SECRET = os.getenv('PAYPAL_SECRET', 'EE8V02eG6_-ZkNIhxF8r-WB2MKGYrfzyD2jvvWoE5x_AFQJQGk8YrhVkjWkHmW2abjTyPVgyErEEPTVp')
 PAYPAL_BASE_URL = os.getenv('PAYPAL_BASE_URL', 'https://api-m.sandbox.paypal.com')
+VENMO_DONATION_URL = os.getenv('VENMO_DONATION_URL', 'https://venmo.com/YourOrgName')
 
 
 # Application definition

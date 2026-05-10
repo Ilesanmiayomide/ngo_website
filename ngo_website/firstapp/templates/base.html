@@ -21,12 +21,7 @@
 
   <!-- ===== ANNOUNCEMENT BAR ===== -->
   <div class="announcement-bar">
-    <form action="{% url 'create_donation' %}" method="post">
-    {% csrf_token %}
-  <button type="submit" class="announcement-bar__link" >Donate through paypal &rarr;</button>
-     <!-- <a href="#" class="announcement-bar__link">DONATE NOW &rarr;</a> -->
-  </form>
-
+    <a href="{% url 'donate' %}" class="announcement-bar__link">Donate </a>
   </div>
 
   <!-- ===== NAVBAR ===== -->
@@ -68,7 +63,7 @@
           <li class="navbar__item"><a href="#" class="navbar__link">EVENTS</a></li>
           <li class="navbar__item"><a href="{% url 'contact' %}" class="navbar__link">JOIN US</a></li>
         </ul>
-        <a href="#" class="navbar__donate-btn">DONATE</a>
+        <a href="{% url 'donate' %}" class="navbar__donate-btn">DONATE</a>
       </nav>
     </div>
   </header>
@@ -82,7 +77,7 @@
       <div class="footer__top">
         <div class="footer__brand">
           <a href="{% url 'home' %}" class="footer__logo">
-            <img src="" alt="Support Way Worldwide" class="footer__logo-img" />
+            <img src="{% static 'images/logo.png' %}" alt="Support Way Worldwide" class="footer__logo-img" />
             <span class="footer__logo-text">Support Way Worldwide</span>
           </a>
           <p class="footer__tagline">Saving &amp; transforming lives<br />all over the globe every day.</p>
@@ -116,22 +111,16 @@
         <div class="footer__contact">
           <h4 class="footer__nav-title">Contact Us</h4>
           <address class="footer__address">
-            <p>5482 Wilshire Blvd. #186</p>
+          <!--  <p>5482 Wilshire Blvd. #186</p>-->
             <p>Los Angeles, CA 90036</p>
-            <p><a href="tel:7084391462" class="footer__contact-link">708-439-1462</a></p>
-            <p><a href="mailto:info@supportwayworldwide.org" class="footer__contact-link">info@supportwayworldwide.org</a></p>
+          <!--  <p><a href="tel:7084391462" class="footer__contact-link">708-439-1462</a></p>-->
+            <p><a href="mailto:Supportwayworldwide@gmail.com" class="footer__contact-link">Supportwayworldwide@gmail.com</a></p>
           </address>
-          <div class="footer__social">
+         <!-- <div class="footer__social">
             <a href="#" class="footer__social-link" aria-label="Twitter / X">
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
             </a>
-            <a href="#" class="footer__social-link" aria-label="Facebook">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-            </a>
-            <a href="#" class="footer__social-link" aria-label="Instagram">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
-            </a>
-          </div>
+          </div>-->
         </div>
       </div>
 

@@ -26,7 +26,7 @@
     <div class="container">
       <div class="story__grid">
         <div class="story__image-wrap">
-          <img src="" alt="Support Way Worldwide founder" class="story__image" />
+          <img src="{% static 'images/o.jpg' %}" alt="Support Way Worldwide founder" class="story__image" />
           <div class="story__image-accent"></div>
         </div>
         <div class="story__content">
@@ -133,10 +133,10 @@
 
         <div class="team__card">
           <div class="team__photo-wrap">
-            <img src="" alt="Dr. A. Onyema — Founder &amp; Executive Director" class="team__photo" />
+            <img src="{% static 'images/o.jpg' %}" alt="Dr. A. Henderson — Founder &amp; Executive Director" class="team__photo" />
           </div>
           <div class="team__info">
-            <h3 class="team__name">Dr. A. Onyema</h3>
+            <h3 class="team__name">Dr. A. Henderson</h3>
             <p class="team__role">Founder &amp; Executive Director</p>
             <p class="team__bio">A board-certified orthopaedic surgeon and passionate humanitarian, Dr. Onyema founded Support Way Worldwide to bridge the gap between world-class medical care and those who need it most.</p>
           </div>
@@ -144,7 +144,7 @@
 
         <div class="team__card">
           <div class="team__photo-wrap">
-            <img src="" alt="Dr. M. Adeyemi — Medical Director" class="team__photo" />
+            <img src="{% static 'images/m.jpg' %}" alt="Dr. M. Adeyemi — Medical Director" class="team__photo" />
           </div>
           <div class="team__info">
             <h3 class="team__name">Dr. M. Adeyemi</h3>
@@ -155,7 +155,7 @@
 
         <div class="team__card">
           <div class="team__photo-wrap">
-            <img src="" alt="Ms. K. Lawson — Director of Programs" class="team__photo" />
+            <img src="{% static 'images/k.jpg' %}" alt="Ms. K. Lawson — Director of Programs" class="team__photo" />
           </div>
           <div class="team__info">
             <h3 class="team__name">Ms. K. Lawson</h3>
@@ -166,10 +166,10 @@
 
         <div class="team__card">
           <div class="team__photo-wrap">
-            <img src="" alt="Mr. J. Okafor — Director of Development" class="team__photo" />
+            <img src="{% static 'images/n.png' %}" alt="Mrs. J. Okafor — Director of Development" class="team__photo" />
           </div>
           <div class="team__info">
-            <h3 class="team__name">Mr. J. Okafor</h3>
+            <h3 class="team__name">Mrs. J. Okafor</h3>
             <p class="team__role">Director of Development</p>
             <p class="team__bio">Mr. Okafor leads fundraising strategy and partnership development, building the coalitions of support that allow Support Way Worldwide to expand its reach year after year.</p>
           </div>
@@ -189,7 +189,7 @@
       <h2 class="cta-banner__title">Join Our Mission</h2>
       <p class="cta-banner__text">Whether you donate, volunteer, or spread the word — you are part of the solution. Every action counts.</p>
       <div class="cta-banner__actions">
-        <a href="#" class="btn btn--primary">DONATE NOW</a>
+        <a href="{% url 'donate' %}" class="btn btn--primary">DONATE NOW</a>
         <a href="{% url 'contact' %}" class="btn btn--outline">GET INVOLVED</a>
       </div>
     </div>
