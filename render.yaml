@@ -20,3 +20,4 @@ services:
         value: 'your-render-host.onrender.com'
       - key: CSRF_TRUSTED_ORIGINS
         value: 'https://your-render-host.onrender.com'
+        buildCommand: ls -R
