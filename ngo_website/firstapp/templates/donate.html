@@ -8,6 +8,7 @@
 {% endblock %}
 
 {% block extra_js %}
+{% if not payment_disabled %}
 <script src="https://www.paypal.com/sdk/js?client-id={{ paypal_client_id }}&currency=USD"></script>
 <script>
   paypal.Buttons({
@@ -29,7 +30,8 @@
       })
       .then(function(orderData) {
         if (orderData.error) {
-          throw new Error(orderData.error);
+          window.location.href = '{{ payment_unavailable_url }}';
+          return;
         }
         return orderData.id;
       });
@@ -42,10 +44,11 @@
     },
     onError: function(err) {
       console.error('PayPal error:', err);
-      alert('An error occurred with the payment. Please try again.');
+      window.location.href = '{{ payment_unavailable_url }}';
     }
   }).render('#paypal-button-container');
 </script>
+{% endif %}
 {% endblock %}
 
 {% block content %}
@@ -79,8 +82,13 @@
         </div>
 
         <div class="payment-methods">
-          <div id="paypal-button-container" class="paypal-button-container"></div>
-          <a href="{{ venmo_url }}" class="payment-button venmo-button" target="_blank" rel="noopener">Donate with Venmo</a>
+          {% if payment_disabled %}
+            <a href="{{ payment_unavailable_url }}" class="payment-button paypal-button">Donate with PayPal</a>
+            <a href="{{ payment_unavailable_url }}" class="payment-button venmo-button">Donate with Venmo</a>
+          {% else %}
+            <div id="paypal-button-container" class="paypal-button-container"></div>
+            <a href="{{ venmo_url }}" class="payment-button venmo-button" target="_blank" rel="noopener">Donate with Venmo</a>
+          {% endif %}
         </div>
       </div>
     </div>

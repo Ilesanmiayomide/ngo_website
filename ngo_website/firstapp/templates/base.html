@@ -24,6 +24,18 @@
     <a href="{% url 'donate' %}" class="announcement-bar__link">Donate </a>
   </div>
 
+  {% if messages %}
+  <section class="flash-messages">
+    <div class="container">
+      {% for message in messages %}
+        <div class="flash-messages__item flash-messages__item--{{ message.tags }}">
+          {{ message }}
+        </div>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+
   <!-- ===== NAVBAR ===== -->
   <header class="navbar" id="navbar">
     <div class="navbar__container">
@@ -104,7 +116,7 @@
             <li><a href="{% url 'programs' %}#mother-child" class="footer__nav-link">Mother and Child</a></li>
             <li><a href="{% url 'programs' %}#scholarships" class="footer__nav-link">Scholarships</a></li>
             <li><a href="{% url 'programs' %}#schools" class="footer__nav-link">Support for Schools</a></li>
-            <li><a href="{% url 'programs' %}#symposia" class="footer__nav-link">African Health Symposia</a></li>
+            <li><a href="{% url 'programs' %}#symposia" class="footer__nav-link">Health Symposia</a></li>
           </ul>
         </div>
 

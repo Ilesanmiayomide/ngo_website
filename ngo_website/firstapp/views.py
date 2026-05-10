@@ -4,6 +4,7 @@ import requests
 import json
 
 from django.conf import settings
+from django.contrib import messages
 from django.http import HttpResponse, HttpResponseBadRequest, JsonResponse
 from django.shortcuts import render, redirect
 from django.urls import reverse
@@ -30,13 +31,19 @@ def programs(request):
 def donate(request):
     return render(request, 'donate.html', {
         'paypal_client_id': settings.PAYPAL_CLIENT_ID,
-        'venmo_url': settings.VENMO_DONATION_URL
+        'venmo_url': settings.VENMO_DONATION_URL,
+        'payment_disabled': settings.PAYPAL_PLACEHOLDER_MODE,
+        'payment_unavailable_url': settings.PAYMENT_UNAVAILABLE_URL,
     })
 
 
 @csrf_exempt
 @require_POST
 def create_paypal_order(request):
+    if settings.PAYPAL_PLACEHOLDER_MODE:
+        return JsonResponse({
+            'error': 'Payment setup failed. We are unable to process your request at this time.'
+        }, status=503)
     try:
         data = json.loads(request.body)
         amount_raw = data.get('amount', '10.00')
@@ -88,6 +95,13 @@ def create_paypal_order(request):
 
 @require_POST
 def create_donation(request):
+    if settings.PAYPAL_PLACEHOLDER_MODE:
+        messages.error(request,
+            "Payment setup failed. We're unable to process your request at this time. "
+            "Please try again later or contact support if the issue persists. Be assured that no charges was made."
+        )
+        return redirect('payment_unavailable')
+
     access_token = get_access_token()
     amount_raw = request.POST.get('amount', '10.00').strip()
 
@@ -174,6 +188,16 @@ def paypal_success(request):
 
 def paypal_cancel(request):
     return render(request, 'paypal_cancel.html')
+
+
+def payment_unavailable(request):
+    # Temporary production-safe placeholder page for payment onboarding.
+    # Real PayPal / Venmo credentials should later be added in production env vars.
+    message = (
+        "Payment setup failed. We're unable to process your request at this time. "
+        "Please try again later or contact support if the issue persists. Be assured that no charges was made."
+    )
+    return render(request, 'payment_unavailable.html', {'message': message})
 
 
 def get_access_token():

@@ -11,4 +11,5 @@ urlpatterns = [
     path('paypal/donate', views.create_donation, name='create_donation'),
     path('paypal/success/', views.paypal_success, name='paypal_success'),
     path('paypal/cancel/', views.paypal_cancel, name='paypal_cancel'),
+    path('payment-unavailable/', views.payment_unavailable, name='payment_unavailable'),
 ]

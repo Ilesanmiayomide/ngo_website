@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 
 import os
 from pathlib import Path
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -23,15 +24,75 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', 'django-insecure-uv+5&gk-l*9qdr85cory(c80c1&!dp(p%oa!ol3vrcl)ur5esz')
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv('DJANGO_DEBUG', 'True') == 'True'
+DJANGO_ENV = os.getenv('DJANGO_ENV', 'development').lower()
+IS_PRODUCTION = DJANGO_ENV == 'production'
+DEBUG = os.getenv('DJANGO_DEBUG', 'True' if not IS_PRODUCTION else 'False') == 'True'
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', 'localhost,127.0.0.1').split(',')
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+if IS_PRODUCTION:
+    CSRF_TRUSTED_ORIGINS = [origin.strip() for origin in os.getenv('CSRF_TRUSTED_ORIGINS', '').split(',') if origin.strip()]
+    SECURE_SSL_REDIRECT = os.getenv('SECURE_SSL_REDIRECT', 'True') == 'True'
+    SESSION_COOKIE_SECURE = True
+    CSRF_COOKIE_SECURE = True
+    SECURE_HSTS_SECONDS = int(os.getenv('SECURE_HSTS_SECONDS', '31536000'))
+    SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+    SECURE_HSTS_PRELOAD = True
+else:
+    CSRF_TRUSTED_ORIGINS = []
+    SECURE_SSL_REDIRECT = False
 
-PAYPAL_CLIENT_ID = os.getenv('PAYPAL_CLIENT_ID', 'AWqyMA_Z0XW4OjpnyotbkOd1CBZAXpE9zEFPAfG0btqabAelBtfHjQlOcwhN6OPOgDhtDFagW70-sVz8')
-PAYPAL_SECRET = os.getenv('PAYPAL_SECRET', 'EE8V02eG6_-ZkNIhxF8r-WB2MKGYrfzyD2jvvWoE5x_AFQJQGk8YrhVkjWkHmW2abjTyPVgyErEEPTVp')
-PAYPAL_BASE_URL = os.getenv('PAYPAL_BASE_URL', 'https://api-m.sandbox.paypal.com')
-VENMO_DONATION_URL = os.getenv('VENMO_DONATION_URL', 'https://venmo.com/YourOrgName')
+# PayPal / Venmo environment settings
+# - Use sandbox defaults during development.
+# - In production, do not use sandbox credentials or sandbox endpoints.
+# - If payment processing is not ready, all payment setup is disabled by default.
+DJANGO_ENV = os.getenv('DJANGO_ENV', 'development').lower()
+IS_PRODUCTION = DJANGO_ENV == 'production'
+PAYPAL_ENV = os.getenv('PAYPAL_ENV', 'sandbox').lower()
+USE_SANDBOX = PAYPAL_ENV == 'sandbox'
+
+PAYMENTS_ENABLED = os.getenv('PAYMENTS_ENABLED', 'False').strip().lower() in ('1', 'true', 'yes')
+PAYMENTS_DISABLED = not PAYMENTS_ENABLED
+
+SANDBOX_PAYPAL_CLIENT_ID = 'AWqyMA_Z0XW4OjpnyotbkOd1CBZAXpE9zEFPAfG0btqabAelBtfHjQlOcwhN6OPOgDhtDFagW70-sVz8'
+SANDBOX_PAYPAL_SECRET = 'EE8V02eG6_-ZkNIhxF8r-WB2MKGYrfzyD2jvvWoE5x_AFQJQGk8YrhVkjWkHmW2abjTyPVgyErEEPTVp'
+
+if IS_PRODUCTION:
+    PAYPAL_CLIENT_ID = os.getenv('PAYPAL_CLIENT_ID', '')
+    PAYPAL_SECRET = os.getenv('PAYPAL_SECRET', '')
+    PAYPAL_BASE_URL = os.getenv('PAYPAL_BASE_URL', 'https://api-m.paypal.com')
+else:
+    PAYPAL_CLIENT_ID = os.getenv('PAYPAL_CLIENT_ID', SANDBOX_PAYPAL_CLIENT_ID)
+    PAYPAL_SECRET = os.getenv('PAYPAL_SECRET', SANDBOX_PAYPAL_SECRET)
+    PAYPAL_BASE_URL = os.getenv('PAYPAL_BASE_URL', 'https://api-m.sandbox.paypal.com')
+
+# Payment setup is disabled when PAYMENTS_ENABLED is not explicitly turned on,
+# or when production credentials or mode are unsafe.
+PAYPAL_PLACEHOLDER_MODE = PAYMENTS_DISABLED or (
+    IS_PRODUCTION and (
+        not (PAYPAL_CLIENT_ID and PAYPAL_SECRET)
+        or PAYPAL_ENV != 'production'
+        or PAYPAL_CLIENT_ID == SANDBOX_PAYPAL_CLIENT_ID
+        or PAYPAL_SECRET == SANDBOX_PAYPAL_SECRET
+    )
+)
+
+if IS_PRODUCTION and 'sandbox.paypal.com' in PAYPAL_BASE_URL:
+    raise RuntimeError(
+        'Sandbox PayPal endpoints are not allowed in production. '
+        'Set PAYPAL_BASE_URL to the live PayPal API URL or remove PAYPAL_BASE_URL from production env.'
+    )
+
+if IS_PRODUCTION and PAYPAL_PLACEHOLDER_MODE:
+    # Live pay flow is intentionally disabled when production is not ready.
+    PAYPAL_BASE_URL = 'https://api-m.paypal.com'
+
+# Venmo link should also go to the safe unavailable page if payments are disabled.
+VENMO_DONATION_URL = os.getenv(
+    'VENMO_DONATION_URL',
+    '/payment-unavailable/' if PAYPAL_PLACEHOLDER_MODE else 'https://venmo.com/YourOrgName'
+)
+PAYMENT_UNAVAILABLE_URL = '/payment-unavailable/'
 
 
 # Application definition
@@ -48,6 +109,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -79,12 +141,18 @@ WSGI_APPLICATION = 'ngo_website.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+DATABASE_URL = os.getenv('DATABASE_URL', '')
+if DATABASE_URL:
+    DATABASES = {
+        'default': dj_database_url.parse(DATABASE_URL, conn_max_age=600, ssl_require=IS_PRODUCTION)
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
@@ -123,3 +191,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'

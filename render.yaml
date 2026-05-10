@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: ngo-website
+    env: python
+    plan: free
+    buildCommand: pipenv install --deploy --ignore-pipfile && pipenv run python manage.py collectstatic --no-input
+    startCommand: gunicorn ngo_website.wsgi:application --bind 0.0.0.0:$PORT
+    envVars:
+      - key: DJANGO_ENV
+        value: production
+      - key: DJANGO_DEBUG
+        value: 'False'
+      - key: PAYMENTS_ENABLED
+        value: 'False'
+      - key: SECRET_KEY
+        value: 'replace-with-secure-secret'
+      - key: DATABASE_URL
+        value: 'postgres://user:password@host:5432/dbname'
+      - key: ALLOWED_HOSTS
+        value: 'your-render-host.onrender.com'
+      - key: CSRF_TRUSTED_ORIGINS
+        value: 'https://your-render-host.onrender.com'
