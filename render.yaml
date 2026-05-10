@@ -3,7 +3,7 @@ services:
     name: ngo-website
     env: python
     plan: free
-    buildCommand: pipenv install --deploy --ignore-pipfile && pipenv run python manage.py collectstatic --no-input
+    buildCommand: pip install -r requirements.txt && python manage.py migrate && python manage.py collectstatic --no-input
     startCommand: gunicorn ngo_website.wsgi:application --bind 0.0.0.0:$PORT
     envVars:
       - key: DJANGO_ENV
