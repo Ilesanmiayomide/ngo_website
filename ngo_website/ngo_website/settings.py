@@ -27,7 +27,14 @@ SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', 'django-insecure-uv+5&gk-l*9qdr85cor
 DJANGO_ENV = os.getenv('DJANGO_ENV', 'development').lower()
 IS_PRODUCTION = DJANGO_ENV == 'production'
 DEBUG = os.getenv('DJANGO_DEBUG', 'True' if not IS_PRODUCTION else 'False') == 'True'
-ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', 'localhost,127.0.0.1').split(',')
+ALLOWED_HOSTS = [
+    'ngo-website-ac20.onrender.com',
+    'localhost',
+    '127.0.0.1',
+    'supportwayworldwide.com',      # add when ready
+    'www.supportwayworldwide.com',  # add when ready
+]
+# ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', 'localhost,127.0.0.1').split(',')
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 if IS_PRODUCTION:
