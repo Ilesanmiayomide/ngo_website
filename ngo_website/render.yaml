@@ -4,7 +4,7 @@ services:
     env: python
     plan: free
     buildCommand: pip install -r requirements.txt && python ngo_website/manage.py migrate && python ngo_website/manage.py collectstatic --no-input
-    startCommand: gunicorn ngo_website ngo_website.wsgi:application --bind 0.0.0.0:$PORT
+    startCommand: gunicorn --chdir ngo_website ngo_website.wsgi:application --bind 0.0.0.0:$PORT
     envVars:
       - key: DJANGO_ENV
         value: production
@@ -20,4 +20,3 @@ services:
         value: 'your-render-host.onrender.com'
       - key: CSRF_TRUSTED_ORIGINS
         value: 'https://your-render-host.onrender.com'
-        buildCommand: ls -R
